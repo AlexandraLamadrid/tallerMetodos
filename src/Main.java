@@ -1,41 +1,32 @@
-import ejercicios.Ejercicio1Conversiones;
-import ejercicios.Ejercicio2Calificaciones;
+package ejercicios;
 
 import java.util.Scanner;
 
-        public class Main {
-            public static void main(String[] args) {
-                Scanner scanner = new Scanner(System.in);
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
 
-                System.out.println("=== CONVERSIÓN DE UNIDADES ===");
-                System.out.print("Ingresa metros: ");
-                double metros = scanner.nextDouble();
-                System.out.println("Centímetros: " + Ejercicio1Conversiones.metrosACentimetros(metros));
+        do {
+            System.out.println("\n=== TALLER JAVA 7 - MÉTODOS ===");
+            System.out.println("1. Ejercicio 1: Conversión de Unidades");
+            System.out.println("2. Ejercicio 2: Sistema de Calificaciones");
+            System.out.println("3. Ejercicio 3: Calculadora Avanzada");
+            System.out.println("4. Salir");
+            System.out.println("===============================");
+            System.out.print("Elige una opción: ");
+            opcion = scanner.nextInt();
 
-                System.out.print("Ingresa kilogramos: ");
-                double kg = scanner.nextDouble();
-                System.out.println("Libras: " + Ejercicio1Conversiones.kilogramosALibras(kg));
-
-                System.out.print("Ingresa grados Celsius: ");
-                double celsius = scanner.nextDouble();
-                System.out.println("Fahrenheit: " + Ejercicio1Conversiones.celsiusAFahrenheit(celsius));
-
-                //Ejercicio2
-
-                System.out.println("\n=== CALIFICACIONES ===");
-                System.out.print("Nota 1: ");
-                double n1 = scanner.nextDouble();
-                System.out.print("Nota 2: ");
-                double n2 = scanner.nextDouble();
-                System.out.print("Nota 3: ");
-                double n3 = scanner.nextDouble();
-
-                double promedio = Ejercicio2Calificaciones.calcularPromedio(n1, n2, n3);
-                System.out.println("Promedio: " + promedio);
-                System.out.println("Letra: " + Ejercicio2Calificaciones.obtenerLetra(promedio));
-                System.out.println("Estado: " + (Ejercicio2Calificaciones.estaAprobado(promedio) ? "APROBADO" : "REPROBADO"));
+            switch (opcion) {
+                case 1 -> Ejercicio1Conversiones.ejecutar();
+                case 2 -> Ejercicio2Calificaciones.ejecutar();
+                case 3 -> Ejercicio3Calculadora.ejecutar(); // aquí debería estar tu menú de calculadora
+                case 4 -> System.out.println("Saliendo del programa...");
+                default -> System.out.println("Opción inválida. Intenta de nuevo.");
             }
 
+        } while (opcion != 4);
 
-
-        }
+        scanner.close();
+    }
+}
