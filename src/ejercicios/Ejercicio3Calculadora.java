@@ -24,22 +24,22 @@ public class Ejercicio3Calculadora {
             opcion = leerEntero(sc);
 
             switch (opcion) {
-                case 1 -> { // Suma
+                case 1 -> {
                     double a = leerNumero(sc, "Ingrese el primer número: ");
                     double b = leerNumero(sc, "Ingrese el segundo número: ");
                     System.out.println("Resultado: " + (a + b));
                 }
-                case 2 -> { // Resta
+                case 2 -> {
                     double a = leerNumero(sc, "Ingrese el primer número: ");
                     double b = leerNumero(sc, "Ingrese el segundo número: ");
                     System.out.println("Resultado: " + (a - b));
                 }
-                case 3 -> { // Multiplicación
+                case 3 -> {
                     double a = leerNumero(sc, "Ingrese el primer número: ");
                     double b = leerNumero(sc, "Ingrese el segundo número: ");
                     System.out.println("Resultado: " + (a * b));
                 }
-                case 4 -> { // División con validación
+                case 4 -> {
                     double a = leerNumero(sc, "Ingrese el dividendo: ");
                     double b;
                     do {
@@ -50,17 +50,17 @@ public class Ejercicio3Calculadora {
                     } while (b == 0);
                     System.out.println("Resultado: " + (a / b));
                 }
-                case 5 -> { // Potencia
+                case 5 -> {
                     double base = leerNumero(sc, "Ingrese la base: ");
                     double exp = leerNumero(sc, "Ingrese el exponente: ");
                     System.out.println("Resultado: " + Math.pow(base, exp));
                 }
-                case 6 -> { // Porcentaje
+                case 6 -> {
                     double total = leerNumero(sc, "Ingrese el número: ");
                     double porcentaje = leerNumero(sc, "Ingrese el porcentaje (%): ");
                     System.out.println("Resultado: " + (total * porcentaje / 100));
                 }
-                case 7 -> { // Raíz cuadrada con validación
+                case 7 -> {
                     double num;
                     do {
                         num = leerNumero(sc, "Ingrese el número: ");
@@ -78,8 +78,6 @@ public class Ejercicio3Calculadora {
         } while (opcion != 8);
     }
 
-    // === MÉTODOS AUXILIARES ===
-
     private static double leerNumero(Scanner sc, String mensaje) {
         while (true) {
             System.out.print(mensaje);
@@ -87,7 +85,7 @@ public class Ejercicio3Calculadora {
                 return sc.nextDouble();
             } catch (InputMismatchException e) {
                 System.out.println("⚠️ Error: debe ingresar un número válido.");
-                sc.nextLine(); // limpiar buffer
+                sc.nextLine();
             }
         }
     }

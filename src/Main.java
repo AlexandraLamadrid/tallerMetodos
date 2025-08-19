@@ -20,7 +20,7 @@ public class Main {
             switch (opcion) {
                 case 1 -> Ejercicio1Conversiones.ejecutar();
                 case 2 -> Ejercicio2Calificaciones.ejecutar();
-                case 3 -> Ejercicio3Calculadora.ejecutar(); // aquí debería estar tu menú de calculadora
+                case 3 -> Ejercicio3Calculadora.ejecutar();
                 case 4 -> System.out.println("Saliendo del programa...");
                 default -> System.out.println("Opción inválida. Intenta de nuevo.");
             }
